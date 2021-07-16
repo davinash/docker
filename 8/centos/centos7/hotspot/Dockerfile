@@ -9,6 +9,12 @@ gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public' > /etc/yum
     yum update -y && yum install -y git curl adoptopenjdk-8-hotspot-8u292_b10-3 freetype fontconfig unzip which && \
     yum clean all
 
+RUN yum install subversion -y
+RUN yum install gcc-c++ -y
+RUN yum install pam-devel -y
+RUN yum install make -y
+
+
 ARG TARGETARCH
 ARG GIT_LFS_VERSION=2.13.3
 

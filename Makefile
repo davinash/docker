@@ -48,7 +48,7 @@ build-rhel-ubi8-jdk11:
 	docker buildx bake -f docker-bake.hcl --set '*.platform=linux/amd64' --load rhel_ubi8_jdk11
 
 build-centos7:
-	docker buildx bake -f docker-bake.hcl --set '*.platform=linux/amd64' --load centos7_jdk8
+	docker build -t jenkin-server --file 8/centos/centos7/hotspot/Dockerfile .
 
 bats:
 	git clone -b v1.3.0 https://github.com/bats-core/bats-core bats
